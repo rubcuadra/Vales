@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+		{% for contacto in contactos %}
+		
+			<a href="{% url 'edit_contactos' contacto.pk %}"> <p>{{ contacto }}</p></a>
+			<p>{{ contacto.phone_number }}</p>
+			<p>{{ contacto.email }}</p>
+		{% endfor %}
+		<a href="{% url 'person-new' %}" class="btn btn-lg btn-default">Añadir</a>
+	</div>
+{% endblock %}
+
